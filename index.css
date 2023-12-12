@@ -1,0 +1,90 @@
+/* css reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Main CSS */
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: hsla(174, 62%, 47%, 0.04);
+  justify-content: space-around;
+
+}
+
+.card {
+  display: flex;
+  /* position: fixed; */
+  width: 40%;
+  height: 81%;
+  background: hsla(0, 0%, 100%, 1);
+  border-radius: 6px;
+  box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.10);
+  margin-top: 75px
+}
+
+header.nav {
+  display: fixed;
+  margin-top: 10.5%;
+  width: 32%;
+  height: 33%;
+}
+
+header img {
+  width: 15%;
+  height: 30%;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.10));
+  margin-block-end: 25px;
+}
+
+h1 {
+color: hsla(174, 100%, 2%, 1);
+font-family: Brown;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 125%;
+letter-spacing: -0.8px;
+}
+
+p {
+  height: 31%;
+  color: hsla(0, 0%, 45%, 1);
+  font-family: Brown;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px/*156.25% */;
+  margin-block-start: 13px;
+  margin-block-end: 0px;
+}
