@@ -18,19 +18,78 @@
     </header>
     
     <section class="card">
-      <div class="fmfld">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="Firstname" placeholder="Tolu" required />
+      <div class="fields">
+        <div class="fmfld">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="Firstname" placeholder="Tolu" required />
+        </div>
+        
+        <div class="fmfld">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="Lastname" required />
+        </div>
       </div>
 
-      <div class="fmfld">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="Lastname" required />
+      <div class="fields">
+        <div class="fmfld">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" placeholder="Select gender" required>
+            <option>Select here</option>
+            <option>Female</option>
+            <option>Male</option>
+          </select>
+        </div>
+        
+        <div class="fmfld">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="DOB" placeholder="Select here" required />
+        </div>
       </div>
 
-      <div class="fmfld">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="Firstname" placeholder="Tolu" required />
+      <div class="fields">
+        <div class="fmfld">
+          <label for="weight">Weight (KG)</label>
+          <input type="text" id="weight" name="Weight" placeholder="Enter Weight" required />
+        </div>
+        
+        <div class="fmfld">
+          <label for="height">Height</label>
+          <input type="text" id="height" name="Height" placeholder="" required />
+        </div>
+      </div>
+       
+      <div class="fields">
+        <div class="fmfld">
+          <label for="alvl">Activity Level</label>
+          <select id="alvl" name="Activitylvl" required>
+            <option>Select here</option>
+            <option>Skipping</option>
+            <option>Running</option>
+            <option>Swimming</option>
+            <option>Diving</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="fmfld">
+          <label for="pswd">Password</label>
+          <input type="password" id="pswd" name="password" required />
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="fmfld">
+          <input type="submit" id="reg" value="Register" />
+        </div>
+      </div>
+
+      <div class="fields">
+        <footer class="fmfld">
+          <p id="btn">
+            By clicking Register, you agree to our <a href="./termsofuse">Terms of Use</a> and our <a href="./privacy">Privacy Policy</a>
+          </p>
+        </footer>
       </div>
 
     </section>
