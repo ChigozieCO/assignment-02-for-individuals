@@ -31,6 +31,22 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Main CSS */
+@font-face {
+  font-family: 'BrownFont';
+  src: url('./assets/fonts/Brown\ Bold.ttf')
+      format('truetype'),
+    url('./assets/fonts/BrownExtraBold\ Regular.ttf')
+      format('truetype'),
+    url('./assets/fonts/BrownLight\ Regular.ttf')
+      format('truetype');
+  font-weight: 100 1000;
+}
+
+:root {
+  /* custom properties, css variable */
+  --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
+}
 
 .wrapper {
   display: flex;
@@ -56,7 +72,7 @@ p, h1, h2, h3, h4, h5, h6 {
 header.nav {
   display: fixed;
   margin-top: 10.5%;
-  width: 32%;
+  width: 33%;
   height: 33%;
 }
 
@@ -69,7 +85,7 @@ header img {
 
 h1 {
 color: hsla(174, 100%, 2%, 1);
-font-family: Brown;
+font-family: "BrownFont", var(--font-fallback);
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
@@ -80,11 +96,35 @@ letter-spacing: -0.8px;
 p {
   height: 31%;
   color: hsla(0, 0%, 45%, 1);
-  font-family: Brown;
+  font-family: "BrownFont", var(--font-fallback);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 25px/*156.25% */;
   margin-block-start: 13px;
   margin-block-end: 0px;
+}
+
+.card .fmfld {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 40px;
+  margin-inline-start: 40px;
+}
+
+label {
+  width: 150px;
+  height: 14px;
+  margin-block-end: 10px;
+}
+
+input {
+  width: 13rem;
+  height: 2.5rem;
+  /* border: ; */
+}
+
+input::placeholder {
+  width: 8.5rem;
+  margin-left: 16px;
 }
