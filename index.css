@@ -42,9 +42,21 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 100 1000;
 }
 
+@font-face {
+  font-family: 'Sofia-Pro';
+  src: url('./assets/fonts/SofiaProBlack.ttf') format('truetype'),
+    url('./assets/fonts/SofiaProBlack.eot'),
+    url('./assets/fonts/SofiaProBlack.eot') format('embedded-opentype'),
+      url('./assets/fonts/SofiaProBlack.woff2') format('woff2'),
+      url('./assets/fonts/SofiaProBlack.woff') format('woff');
+  font-weight: 100 1000;
+}
+
+
+
 :root {
   /* custom properties, css variable */
-  --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  --font-fallback: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif";
 }
 
@@ -81,7 +93,7 @@ header.nav {
 header img {
   width: 15%;
   height: 30%;
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.10));
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
   margin-block-end: 25px;
 }
 
@@ -127,8 +139,8 @@ label {
   width: 150px;
   height: 14px;
   margin-block-end: 10px;
-  color: var(--Text-Headings, #011C34);
-  font-family: Sofia Pro;
+  color: hsla(208, 96%, 10%, 1);
+  font-family: "Sofia-Pro", var(--font-fallback);
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -136,23 +148,30 @@ label {
   letter-spacing: 0.1px;
 }
 
+/* then make the page responsive. */
 input, select {
   width: 13rem;
   height: 2.5rem;
   border: 1px solid hsla(0, 0%, 94%, 1);
   border-radius: 2px;
-  font-family: Sofia Pro;
+  font-family: "Sofia-Pro", var(--font-fallback);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.2px;
-  /* border: ; */
+  color: hsla(0, 0%, 45%, 1);
+  padding: 10px 20px;
+  
 }
 
-input :focus {
-  border: solid hsla(174, 62%, 47%, 1);
-  color: hsla(208, 96%, 10%, 1);
+input:focus {
+  border: 3px solid hsla(174, 62%, 47%, 0.6);
+  outline: none;
+}
+
+select:focus-visible {
+  outline: 3px solid hsla(174, 62%, 47%, 0.6);
 }
 
 .fmfld select#alvl, input#pswd, input#reg {
@@ -164,9 +183,9 @@ input :focus {
 input#reg {
   margin-block-start: 20px;
   background-color: hsla(174, 62%, 47%, 1);
-  filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.10));
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
   color: hsla(0, 0%, 100%, 1);
-  font-family: Sofia Pro;
+  font-family: "Sofia-Pro";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -185,7 +204,7 @@ text-decoration-line: underline;
 }
 
 p#btn {
-  font-family: Sofia Pro, sans-serif ;
+  font-family: "Sofia-Pro", var(--font-fallback) ;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
