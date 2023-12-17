@@ -16,4 +16,4 @@ Snippet of my implementation of the design is shown below:
 
 ![chrome_ewBk59KfdE](https://github.com/ChigozieCO/assignment-02-for-individuals/assets/107365067/e86ca32e-f645-460a-8c42-508b6fe71e2e)
 
-This repo contains the code and the design is hosted [here]()
+This repo contains the code and the design is hosted [here](https://jazzy-queijadas-0b794f.netlify.app/)
