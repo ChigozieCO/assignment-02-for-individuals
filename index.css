@@ -33,11 +33,11 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Main CSS */
 @font-face {
   font-family: 'BrownFont';
-  src: url('./assets/fonts/Brown\ Bold.ttf')
+  src: url('./assets/fonts/Brown-Bold.ttf')
       format('truetype'),
-    url('./assets/fonts/BrownExtraBold\ Regular.ttf')
+    url('./assets/fonts/BrownExtraBold-Regular.ttf')
       format('truetype'),
-    url('./assets/fonts/BrownLight\ Regular.ttf')
+    url('./assets/fonts/BrownLight-Regular.ttf')
       format('truetype');
   font-weight: 100 1000;
 }
@@ -52,8 +52,6 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 100 1000;
 }
 
-
-
 :root {
   /* custom properties, css variable */
   --font-fallback: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
@@ -63,20 +61,19 @@ p, h1, h2, h3, h4, h5, h6 {
 .wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: hsla(174, 62%, 47%, 0.04);
   justify-content: space-around;
-
 }
 
 .card {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 40%;
-  height: 81%;
+  height: 83vh;
   background: hsla(0, 0%, 100%, 1);
   border-radius: 6px;
   box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.10);
@@ -84,19 +81,19 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 header.nav {
-  display: fixed;
   margin-top: 10.5%;
   width: 33%;
   height: 33%;
 }
 
+/* Style for the header logo in the project */
 header img {
   width: 15%;
   height: 30%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.10);
   margin-block-end: 25px;
 }
 
+/* general style for all h1 elements in the project */
 h1 {
 color: hsla(174, 100%, 2%, 1);
 font-family: "BrownFont", var(--font-fallback);
@@ -107,6 +104,7 @@ line-height: 125%;
 letter-spacing: -0.8px;
 }
 
+/* general style for all p elements in the project */
 p {
   height: 31%;
   color: hsla(0, 0%, 45%, 1);
@@ -115,20 +113,26 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 25px/*156.25% */;
-  margin-block-start: 13px;
+  margin-block-start: 2%;
   margin-block-end: 0px;
+}
+
+/* hide the header content specific to mobile view */
+.smallscreen {
+  display: none;
 }
 
 .card .fields{
   display: flex;
   flex-direction: row;
-  display: fixed;
 }
 
 .fmfld {
   display: flex;
   flex-direction: column;
-  margin-inline-start: 40px;
+  margin-inline-start: 1.7em;
+  margin-inline-end: 1.7em;
+  width: 100%; /* container for the form fields, set to 100% so the the fields in it is responsive */
 }
 
 .fields:first-child {
@@ -136,7 +140,7 @@ p {
 }
 
 label {
-  width: 150px;
+  width: 100%; 
   height: 14px;
   margin-block-end: 10px;
   color: hsla(208, 96%, 10%, 1);
@@ -148,9 +152,8 @@ label {
   letter-spacing: 0.1px;
 }
 
-/* then make the page responsive. */
 input, select {
-  width: 13rem;
+  width: 100%; /* set to 100% for responsiveness */
   height: 2.5rem;
   border: 1px solid hsla(0, 0%, 94%, 1);
   border-radius: 2px;
@@ -175,13 +178,13 @@ select:focus-visible {
 }
 
 .fmfld select#alvl, input#pswd, input#reg {
-  width: 28.5rem;
+  width: 100%;
   height: 2.5rem;
 }
 
-
+/* Style the register button */
 input#reg {
-  margin-block-start: 20px;
+  margin-block-start: 2%;
   background-color: hsla(174, 62%, 47%, 1);
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.10);
   color: hsla(0, 0%, 100%, 1);
@@ -193,22 +196,99 @@ input#reg {
   letter-spacing: 0.2px;
 }
 
-/* input::placeholder {
-  width: 8.5rem;
-  margin-left: 16px;
-} */
-
+/* General style for links */
 a {
 color: hsla(174, 62%, 47%, 1);
 text-decoration-line: underline;
 }
 
-p#btn {
+/* Styling the terms of use and policy warning */
+p#btn, p#terms {
   font-family: "Sofia-Pro", var(--font-fallback) ;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 25px;
   text-align: center;
-  margin-block-end: 15px;
+  margin-block-end: 5%;
+}
+
+/* styling for media sized devices */
+@media (max-width: 1020px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  header.nav {
+    margin-inline-start: 10%;
+    margin-top: 7.5%;
+    width: 85%;
+  }
+
+  .card {
+    width: 85%;
+    margin-inline-start: 10%;
+    margin-block-start: 55px;
+  }
+}
+
+/* Styling for small screen devices */
+@media (max-width: 599px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  p#largescreen {
+    display: none;
+  }
+
+  .smallscreen {
+    display: block;
+  }
+
+  header.nav {
+    margin-inline-start: 8%;
+    margin-top: 7.5%;
+    width: 85%;
+    height: 28%;
+  }
+
+  .card {
+    margin-block-start: 15px;
+    margin-inline-start: 8%;
+    height: 95%;
+  }
+
+  .card .fields {
+    flex-direction: column;
+    margin-inline-start: 0%;
+    margin-inline-end: 7%;
+    margin-block-end: 18px;
+  }
+
+  .fmfld {
+    margin-inline-start: 7%;
+    padding-right: 6%;
+  }
+
+  .fields:first-child {
+    margin-block-start: 20px;
+}
+
+  .input#reg {
+    padding-bottom: 30px;
+  }
+
+  p#btn {
+    display: none;
+  }
+
+  p#terms {
+    font-size: 12px;
+    margin-inline-start: 25px;
+  }
+
+  footer.fmfld {
+    width: 87%;
+  }
 }
