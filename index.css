@@ -142,6 +142,7 @@ p {
 label {
   width: 100%; 
   height: 14px;
+  margin-block-start: 5%;
   margin-block-end: 10px;
   color: hsla(208, 96%, 10%, 1);
   font-family: "Sofia-Pro", var(--font-fallback);
