@@ -71,8 +71,8 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: space-between;
   width: 40%;
+  height: max-content;
   background: hsla(0, 0%, 100%, 1);
   border-radius: 6px;
   box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.10);
@@ -215,9 +215,10 @@ p#btn, p#terms {
 }
 
 /* styling for medium sized devices */
-@media (max-width: 1020px) {
+@media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   header.nav {
